@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picta Diary — AI-Powered Visual Journal</title>
+  <meta name="description" content="Write your thoughts. Watch AI turn them into art. Picta Diary is the journal that visualizes your memories." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Picta Diary" />
+  <meta property="og:description" content="Write your thoughts. Watch AI turn them into art." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple-light: #EBE6F5;
+      --purple-mid:   #B4AFD2;
+      --purple-dark:  #7B6FA0;
+      --text-primary: #1e1e32;
+      --text-muted:   #5a5478;
+      --white:        #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--text-primary);
+      background: var(--white);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background: linear-gradient(160deg, var(--purple-light) 0%, var(--purple-mid) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .app-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary);
+    }
+
+    .hero .tagline {
+      margin-top: 1rem;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 420px;
+      line-height: 1.55;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 2.5rem;
+      transition: opacity 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .cta:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    .cta img {
+      height: 54px;
+      width: auto;
+      display: block;
+    }
+
+    /* ── Features ── */
+    .features {
+      padding: 5rem 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      color: var(--text-primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--purple-light);
+      border-radius: 20px;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Styles showcase ── */
+    .styles-section {
+      background: linear-gradient(160deg, var(--purple-light) 0%, var(--purple-mid) 100%);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .styles-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .style-pill {
+      background: var(--white);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+    }
+
+    /* ── Footer / CTA ── */
+    .footer-cta {
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-cta p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid #eee;
+    }
+
+    /* ── Scroll indicator ── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0.65;
+      animation: fadeInHint 1.5s ease 0.8s both;
+    }
+
+    .scroll-hint span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-hint svg {
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    @keyframes fadeInHint {
+      from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+      to   { opacity: 0.5; transform: translateX(-50%) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <img
+      class="app-icon"
+      src="icon.png"
+      alt="Picta Diary app icon"
+      onerror="this.style.display='none'"
+    />
+    <h1>Picta Diary</h1>
+    <p class="tagline">Write your thoughts.<br>Watch AI turn them into art.</p>
+    <!--
+      Replace YOUR_APP_ID with your actual App Store app ID.
+      e.g. https://apps.apple.com/app/idYOUR_APP_ID
+    -->
+    <a
+      class="cta"
+      href="https://apps.apple.com/app/idYOUR_APP_ID"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="download_app_store.svg" alt="Download on the App Store" />
+    </a>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 11L15 19L23 11" stroke="#5a5478" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="features">
+    <p class="section-label">What it does</p>
+    <h2 class="section-title">Your journal, now with visuals</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">✍️</div>
+        <h3>Write your day</h3>
+        <p>Capture your thoughts, feelings, and moments in your personal diary.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>AI-generated art</h3>
+        <p>Your entry becomes a unique image — powered by AI, inspired by your words.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗂️</div>
+        <h3>Organized by month</h3>
+        <p>Browse your memories grouped by month. Relive every chapter of your story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Art styles ── -->
+  <section class="styles-section">
+    <p class="section-label">Choose your style</p>
+    <h2 class="section-title">Every entry, a new aesthetic</h2>
+    <div class="styles-list">
+      <span class="style-pill">Realistic</span>
+      <span class="style-pill">Watercolor</span>
+      <span class="style-pill">Oil Painting</span>
+      <span class="style-pill">Anime</span>
+      <span class="style-pill">Sketch</span>
+      <span class="style-pill">Cinematic</span>
+    </div>
+  </section>
+
+  <!-- ── Footer CTA ── -->
+  <section class="footer-cta">
+    <h2>Start your visual diary today</h2>
+    <p>Free to download. Available on iPhone.</p>
+    <a
+      class="cta"
+      href="https://apps.apple.com/app/idYOUR_APP_ID"
+      target="_blank"
+      rel="noopener"
+    >
+      <img src="download_app_store.svg" alt="Download on the App Store" />
+    </a>
+  </section>
+
+  <footer>
+    &copy; 2025 Picta Diary &nbsp;·&nbsp; All rights reserved
+  </footer>
+
+</body>
+</html>
