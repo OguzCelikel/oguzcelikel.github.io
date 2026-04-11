@@ -1,0 +1,30 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="40" x2="1080" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3EDFF"/>
+      <stop offset="1" stop-color="#A795CF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="126" y1="104" x2="1074" y2="542" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#F7F2FF" stop-opacity="0.78"/>
+    </linearGradient>
+    <linearGradient id="iconbg" x1="176" y1="150" x2="392" y2="388" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3EDFF"/>
+      <stop offset="1" stop-color="#9E8BC9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1038" cy="108" r="92" fill="#FFFFFF" fill-opacity="0.18"/>
+  <circle cx="126" cy="522" r="120" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="78" y="72" width="1044" height="486" rx="36" fill="url(#card)"/>
+  <rect x="150" y="144" width="268" height="268" rx="64" fill="url(#iconbg)"/>
+  <rect x="204" y="194" width="72" height="168" rx="22" fill="#FFFFFF"/>
+  <rect x="276" y="194" width="92" height="168" rx="22" fill="#F6F0FF"/>
+  <path d="M276 208C284 202 295 198 308 198C328 198 347 207 360 222V357C347 343 328 334 308 334C295 334 284 337 276 342V208Z" fill="#F9F5FF"/>
+  <path d="M254 236C275 251 288 275 289 302C311 300 331 290 347 274C370 251 379 217 370 188C337 191 304 208 284 235C274 247 266 260 260 274C258 262 256 249 254 236Z" fill="#7B6FA0"/>
+  <text x="474" y="246" fill="#1E1E32" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">Picta Diary</text>
+  <text x="474" y="312" fill="#5A5478" font-family="Arial, Helvetica, sans-serif" font-size="32">AI-powered visual journal for your thoughts, memories, and moments.</text>
+  <text x="474" y="374" fill="#5A5478" font-family="Arial, Helvetica, sans-serif" font-size="28">Write your day. Watch AI turn it into art.</text>
+  <rect x="474" y="426" width="258" height="66" rx="33" fill="#7B6FA0"/>
+  <text x="531" y="468" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Download on iPhone</text>
+</svg>

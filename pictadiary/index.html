@@ -5,11 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Picta Diary — AI-Powered Visual Journal</title>
   <meta name="description" content="Write your thoughts. Watch AI turn them into art. Picta Diary is the journal that visualizes your memories." />
+  <meta name="theme-color" content="#B4AFD2" />
+  <meta name="apple-itunes-app" content="app-id=6754219823, app-argument=https://apps.apple.com/app/id6754219823" />
+  <link rel="canonical" href="https://oguzcelikel.github.io/pictadiary/" />
+  <link rel="icon" href="./pictaIcon2.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://oguzcelikel.github.io/pictadiary/pictaIcon2.png" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Picta Diary" />
-  <meta property="og:description" content="Write your thoughts. Watch AI turn them into art." />
+  <meta property="og:site_name" content="Picta Diary" />
+  <meta property="og:title" content="Picta Diary — AI-Powered Visual Journal" />
+  <meta property="og:description" content="Write your thoughts. Watch AI turn them into art. Picta Diary turns memories into AI-generated visuals." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oguzcelikel.github.io/pictadiary/" />
+  <meta property="og:image" content="https://oguzcelikel.github.io/pictadiary/og-image.svg" />
+  <meta property="og:image:alt" content="Picta Diary promotional card with app icon and tagline." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Picta Diary — AI-Powered Visual Journal" />
+  <meta name="twitter:description" content="Write your thoughts. Watch AI turn them into art." />
+  <meta name="twitter:image" content="https://oguzcelikel.github.io/pictadiary/og-image.svg" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Picta Diary",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS",
+      "description": "Picta Diary is an AI-powered visual journal that turns written memories into images.",
+      "url": "https://oguzcelikel.github.io/pictadiary/",
+      "downloadUrl": "https://apps.apple.com/app/id6754219823",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Picta Diary"
+      }
+    }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -164,6 +196,57 @@
       border-radius: 50px;
     }
 
+    /* ── Support ── */
+    .support-section {
+      padding: 5rem 1.5rem;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .support-card {
+      background: var(--purple-light);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+    }
+
+    .support-card p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0.75rem auto 0;
+    }
+
+    .support-email {
+      display: inline-block;
+      margin-top: 1.25rem;
+      color: var(--text-primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .support-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .support-links a,
+    footer a {
+      color: var(--purple-dark);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .support-links a:hover,
+    .support-email:hover,
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     /* ── Footer / CTA ── */
     .footer-cta {
       padding: 5rem 1.5rem;
@@ -234,19 +317,19 @@
   <section class="hero">
     <img
       class="app-icon"
-      src="icon.png"
+      src="pictaIcon2.png"
       alt="Picta Diary app icon"
       onerror="this.style.display='none'"
     />
     <h1>Picta Diary</h1>
     <p class="tagline">Write your thoughts.<br>Watch AI turn them into art.</p>
     <!--
-      Replace YOUR_APP_ID with your actual App Store app ID.
-      e.g. https://apps.apple.com/app/idYOUR_APP_ID
+      App Store URL for Picta Diary.
+      e.g. https://apps.apple.com/app/id6754219823
     -->
     <a
       class="cta"
-      href="https://apps.apple.com/app/idYOUR_APP_ID"
+      href="https://apps.apple.com/app/id6754219823"
       target="_blank"
       rel="noopener"
     >
@@ -297,13 +380,27 @@
     </div>
   </section>
 
+  <!-- ── Support ── -->
+  <section class="support-section" id="support">
+    <p class="section-label">Support</p>
+    <div class="support-card">
+      <h2 class="section-title">Need help with Picta Diary?</h2>
+      <p>For app support, account questions, bug reports, or privacy-related requests, contact us by email and we will get back to you as soon as possible.</p>
+      <a class="support-email" href="mailto:pictadiary@proton.me">pictadiary@proton.me</a>
+      <div class="support-links">
+        <a href="./privacy-policy/">Privacy Policy</a>
+        <a href="./terms-of-use/">Terms of Use</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Footer CTA ── -->
   <section class="footer-cta">
     <h2>Start your visual diary today</h2>
     <p>Free to download. Available on iPhone.</p>
     <a
       class="cta"
-      href="https://apps.apple.com/app/idYOUR_APP_ID"
+      href="https://apps.apple.com/app/id6754219823"
       target="_blank"
       rel="noopener"
     >
@@ -312,7 +409,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Picta Diary &nbsp;·&nbsp; All rights reserved
+    &copy; 2025 Picta Diary &nbsp;·&nbsp; <a href="mailto:pictadiary@proton.me">pictadiary@proton.me</a> &nbsp;·&nbsp; <a href="./privacy-policy/">Privacy Policy</a> &nbsp;·&nbsp; <a href="./terms-of-use/">Terms of Use</a>
   </footer>
 
 </body>
