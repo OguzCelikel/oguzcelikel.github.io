@@ -42,72 +42,102 @@
   <main>
     <section class="card">
       <h1>PictaDiary Privacy Policy</h1>
-      <p class="updated">Last updated: April 10, 2026</p>
+      <p class="updated">Last updated: May 11, 2026</p>
 
       <p>This Privacy Policy explains how information may be processed when you use the PictaDiary mobile app and related services.</p>
 
       <h2>1. Scope</h2>
-      <p>PictaDiary is designed for journaling, note creation, AI-generated image generation, and a personalized experience based on your preferences.</p>
+      <p>PictaDiary is designed for journaling, AI-assisted image generation, partner connection features, notifications, and widget experiences.</p>
 
       <h2>2. Information we process</h2>
-      <p>We may process the following information to provide and operate the app and its services:</p>
+      <p>We may process the following categories of information to provide and operate the app:</p>
       <ul>
-        <li>Account and authentication data: user ID and session data used for sign-in and authentication through Supabase.</li>
-        <li>Usage data: daily usage counters used to manage the image generation limit.</li>
-        <li>App preferences: settings such as language, theme, and image style.</li>
-        <li>User-provided content: text that you submit, such as diary entries or image generation prompts.</li>
+        <li>Account and profile data: your user ID, email address, sign-in provider details, session data, and display name. If you use Sign in with Apple, your email may be a private relay address.</li>
+        <li>On-device journal content: diary titles, diary text, entry dates, and image references stored in the app's local SwiftData database on your device.</li>
+        <li>Generated and selected images: images you generate or attach may be stored in the app's local storage on your device so they can be shown again in your diary and sharing flows.</li>
+        <li>AI inputs: diary text, prompt text, selected style, and language hints may be processed when you request image generation or translation.</li>
+        <li>Usage and preference data: daily image quota counters and settings such as language, theme, image style, font, onboarding state, and related app preferences.</li>
+        <li>Partner feature data: invite codes, connection status, partner user IDs, partner display names, and the latest shared diary image and related metadata, such as source image name and diary timestamp.</li>
+        <li>Notification data: your Apple Push Notification service (APNs) device token if you allow notifications.</li>
+        <li>Widget data: your linked partner's display name, latest shared widget image, and last updated time stored in the app group container used by the iOS widget.</li>
       </ul>
 
-      <h2>3. Confidential and not retained content</h2>
+      <h2>3. How information is used</h2>
+      <p>Information that is processed is used to:</p>
       <ul>
-        <li>PictaDiary treats user logs, prompt content, and generated images as confidential.</li>
-        <li>Prompt text is not stored permanently.</li>
-        <li>Generated images are not retained permanently.</li>
-        <li>User content is not used for advertising, profiling, or third-party training purposes.</li>
-        <li>Image generation is performed through FAL.AI with storage disabled for the request content.</li>
+        <li>Create and manage accounts</li>
+        <li>Sign users in with email/password or Sign in with Apple</li>
+        <li>Save and display diary entries on the device</li>
+        <li>Enforce daily image generation limits</li>
+        <li>Generate images and, when needed, translate diary text into English before image generation</li>
+        <li>Create and manage partner invites and connections</li>
+        <li>Share the latest diary image with a connected partner</li>
+        <li>Send optional partner-related push notifications</li>
+        <li>Show the latest partner photo in the widget</li>
+        <li>Support account recovery, account deletion, troubleshooting, and service security</li>
       </ul>
 
-      <h2>4. How information is used</h2>
+      <h2>4. Partner sharing and widgets</h2>
       <ul>
-        <li>Run the app and authenticate users</li>
-        <li>Enforce daily usage limits</li>
-        <li>Remember the settings you choose</li>
-        <li>Deliver the requested AI features</li>
-        <li>Support troubleshooting and service security</li>
+        <li>If you use partner features, PictaDiary may store your latest shared diary image in Supabase Storage together with limited metadata needed to sync and display that image.</li>
+        <li>PictaDiary may also store partner connection records, invite records, and display names so the partner feature can work.</li>
+        <li>The app and widget may retrieve shared partner images through storage URLs created for that feature.</li>
+        <li>To render the iOS widget, a reduced copy of the latest shared image, the partner's display name, and a timestamp may be stored in the shared app group container on your device.</li>
+        <li>Shared partner images are intended to be visible to linked partner experiences. Please only share content you are comfortable sharing through this feature.</li>
       </ul>
 
-      <h2>5. Third-party services</h2>
+      <h2>5. Notifications</h2>
+      <ul>
+        <li>If you allow notifications, your APNs device token may be stored and associated with your account so partner-photo notifications can be delivered.</li>
+        <li>You can disable notifications at any time in iOS Settings.</li>
+      </ul>
+
+      <h2>6. Third-party services</h2>
       <p>PictaDiary may rely on third-party services including:</p>
       <ul>
-        <li>Supabase: authentication, database, and service infrastructure</li>
+        <li>Supabase: authentication, database, storage, and serverless functions</li>
         <li>FAL.AI: AI image generation</li>
+        <li>OpenAI: translation of non-English diary text into English for image generation workflows</li>
+        <li>Apple services: Sign in with Apple, Apple Push Notification service, widget infrastructure, and optional photo library access if you choose to save an image to Photos</li>
       </ul>
       <p>These providers may have their own privacy and data processing practices.</p>
 
-      <h2>6. Data retention</h2>
+      <h2>7. Data retention</h2>
       <ul>
-        <li>Daily usage counters may be kept as long as needed for limit management.</li>
-        <li>App preferences may be stored on the device or within the relevant service.</li>
-        <li>Prompt, log, and generated image content is not stored permanently.</li>
-        <li>Limited records may be retained when required by law or for security purposes.</li>
+        <li>Account, profile, partner connection, invite, push token, and daily usage records may be kept as long as needed to provide the service, unless you delete your account or the records are otherwise removed.</li>
+        <li>On-device diary entries and locally stored generated images may remain on your device until you delete them, clear app data, or remove the app.</li>
+        <li>Shared partner images may be replaced when a newer image is synced and may be removed when a partner connection is disconnected or an account is deleted.</li>
+        <li>Widget snapshot data stored in the app group may be cleared when you sign out, disconnect a partner, or when the app updates the widget snapshot.</li>
+        <li>Limited records may be retained when required by law, for abuse prevention, or for security purposes.</li>
       </ul>
 
-      <h2>7. Sharing of information</h2>
-      <p>Personal data may be shared with third-party providers only when necessary to operate the service. User content is not sold or shared with advertisers.</p>
+      <h2>8. Sharing of information</h2>
+      <ul>
+        <li>Personal data may be shared with service providers only when needed to operate the app and its features.</li>
+        <li>Partner-shared content is shared with the connected partner flow by design.</li>
+        <li>User content is not sold to advertisers by us.</li>
+      </ul>
 
-      <h2>8. Security</h2>
-      <p>We use reasonable technical and organizational measures to protect information. However, no method of transmission or storage over the internet is 100% secure.</p>
+      <h2>9. Security</h2>
+      <p>We use reasonable technical and organizational measures to protect information. However, no method of transmission or storage over the internet is 100% secure, and no security measure can guarantee absolute protection.</p>
 
-      <h2>9. Children’s privacy</h2>
+      <h2>10. Your choices and rights</h2>
+      <p>Depending on where you live, you may have rights to access, correct, delete, or restrict the processing of your personal data.</p>
+      <ul>
+        <li>You can sign out of your account in the app.</li>
+        <li>You can disconnect a partner connection in the app.</li>
+        <li>You can request password reset and recover access to your account.</li>
+        <li>You can delete your account from the app, which is designed to remove related server-side account records used by PictaDiary.</li>
+        <li>You can disable notifications in iOS Settings.</li>
+      </ul>
+
+      <h2>11. Children's privacy</h2>
       <p>PictaDiary is not directed to children below the applicable age of digital consent. Children in that age group should not use the app.</p>
 
-      <h2>10. Your rights</h2>
-      <p>Depending on where you live, you may have rights to access, correct, delete, or restrict the processing of your personal data. You can contact us to make such a request.</p>
-
-      <h2>11. Changes to this policy</h2>
+      <h2>12. Changes to this policy</h2>
       <p>We may update this policy from time to time. The revised version will be published in the app or through the relevant link.</p>
 
-      <h2>12. Contact</h2>
+      <h2>13. Contact</h2>
       <p>If you have privacy questions, please contact us through the support channel in the app or the developer contact information provided by the app.</p>
 
       <p class="muted"><a href="../terms-of-use/">Terms of Use</a></p>
